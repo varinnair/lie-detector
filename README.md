@@ -1,10 +1,10 @@
-#Inspiration
+<h>Inspiration</h>
 Detecting deceit can be invaluable in numerous situations - from evaluating the credibility of a politician to determining the innocence of a suspected criminal. Nevertheless, current systems that are designed to detect lies, such as polygraph machines or EEG systems, are high-cost and very constrained as far as the tests they support. The idea behind this project was to create a tool capable of instantly evaluating the truth of a given audio clip in an efficient, cost-effective manner.
 
-#What it does
+<h>What it does</h>
 Lie2Me is a software solution that relies heavily on signal processing and machine learning. Users upload an audio clip of someone speaking, which is then broken down into several relevant features, like spectral data and MFCCs. The model then produces summary statistics that concisely represent the aforementioned features. These revised features are then fed into various machine learning models (two-class neural networks were determined to be the most effective) to produce a class prediction corresponding to truth or falsehood.
 
-#How we built it
+<h>How we built it</h>
 Given the lack of publicly available audio data for lie detection, we had to go about collecting data ourselves. We first created a questionnaire and then interviewed ten American-born males to collect audio samples, with the subjects providing information about whether or not they were telling the truth. Subjects were told to lie for five of the ten questions asked and tell the truth for the others without predetermining how they would answer. These audio responses were saved and converted to .wav files, before being processed with the open source PyAudioAnalysis library. After generating summary statistics for the feature vectors produced by the audio analysis and matching them with corresponding binary labels, we used Azure ML Studio to evaluate different machine learning models and identify the best one for our use case. Progress is currently underway to embed the functionality of this work into a web and mobile app.
 
 #Challenges we ran into
